@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.l:hover {
+    color: white;
+}
+
+.bienvenida {
+    background-image: url(img/inicio.jpg);
+}
+
+#sec1 {
+    height: 100vh;
+    background-color: rosybrown;
+}
+
+section:nth-child(4) {
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.fondo:nth-child(3) {
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+}
+
+section:nth-child(5) {
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+}
+
+.cuadro {
+    width: 78vh;
+    height: 70vh;
+    margin-left: 62vh;
+    border-radius: 1cm;
+    background: linear-gradient(to right, #FFF, #BBB);
+}
+
+section div:nth-child(5) {
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+}
+
+.input {
+    border-radius: 0.8rem;
+    border-color: #E9BABC;
+}
+
+#tarjeta {
+    background: linear-gradient(to left, #407EE9, #E7B8AB);
+}
+
+#tarjeta1 {
+    background: linear-gradient(to right, #B1B1B1, #E7B7AD);
+}
+
+#tarjeta2 {
+    background: linear-gradient(to right, #D28E17, rgb(110, 104, 194));
+}
+
+#tarjeta3 {
+    background: linear-gradient(to left, rgb(39, 107, 70), black);
+}
+
+section:nth-child(6) {
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+}
+
+/*Footer*/
+footer {
+
+    width: auto;
+    background-color: black;
+    text-align: center;
+}
+
+.logo {
+    width: 10cm;
+    height: 3cm;
+    padding-top: 0.1cm;
+}
