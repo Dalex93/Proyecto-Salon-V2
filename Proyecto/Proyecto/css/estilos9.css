@@ -408,3 +408,21 @@ footer{
     border:none;
     margin-left: 1cm;
 }
+
+.form{
+    display: block;
+    text-align: center;
+    
+}
+
+.inputs{
+    width: 100%;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+::placeholder{
+    color: white;
+}
