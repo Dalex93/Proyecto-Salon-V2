@@ -9,8 +9,14 @@ class Service extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function product(){
         return $this->belongsTo(Products::class);
+    }
+
+    public function employee(){
+        return $this->belongsTo(Employee::class);
     }
 
     public function appointments(){

@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('registro.index');
 });
+
+
+Route::get('/', function () {
+    return view('login.index');
+});
+Route::get('/', function () {
+    return view('citas.index');
+});
+Route::post('store', [AuthController::class, 'store']);
+
+Route::get('/login', [AuthController::class, 'login']);

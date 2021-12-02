@@ -18,8 +18,7 @@ class CreateInvoicesTable extends Migration
             $table->datetime('invoice_date');
             $table->string('invoice_number');
             $table->decimal('isv',15,2);
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('customer');
             $table->timestamps();
         });
     }

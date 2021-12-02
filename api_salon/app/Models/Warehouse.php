@@ -9,6 +9,8 @@ class Warehouse extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     public function inventory(){
         return $this->belongsTo(Inventory::class);
     }

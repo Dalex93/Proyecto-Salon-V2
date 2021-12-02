@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width: 10cm;
+    height: 3cm;
+    padding-top: 0.1cm;
+}
+
+/* Header */
+header{
+    width: auto;
+    height: 120px;
+    background: black;
+    padding: 0 50px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.menu a{
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+    color: #C47E4B;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+    display: none;
+    color: white;
+}
+
+.mostrar-menu{
+    order:1;
+    color: white;
+    padding-right: 2cm;
+}
+
+.menu a:hover,
+.mostrar-menu:hover
+.esconder-menu:hover{
+    color: #E9BABC;;
+}
+
+#check{
+    display: none;
+}
+
+/*Mostrar Menú */
+
+@media(max-width: 922px){
+    
+    .logo{
+        max-width: 100%;
+    }
+
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        
+    }
+
+    #check:checked ~ .menu{
+        right: 0;
+        
+    }
+}
+
+@media(max-width: 500px){
+    .logo{
+        width: 90%;
+        transition: 0.4s;
+    }
+}
+
+@media(max-width: 996px){
+    .menu .enlace{
+        display: none;
+    }
+    .menu a{
+        align-items: center;
+    }
+}
+
+@media(max-width: 904px){
+    .menu .enlace{
+        display: inline;
+        padding: 10px 0;
+    }
+}
+
+@media(max-width: 1028px){
+    .menu .enlace{
+        display: none;
+    }
+
+    .menu .pag-inicio{
+        display: none;
+    }
+}
+
+@media(max-width:700px) and (min-width:500px){
+    .mostrar-menu{
+        padding-left: 1cm;
+    }
+}
+
+/*Cuerpo de Registro*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body{
+    background-image: url('fondo.jpg');
+}
+  
+.form-register{
+    width: 400px;
+    background: linear-gradient(-225deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+    padding: 30px;
+    margin: auto;
+    padding-top: 50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+}
+  
+.form-register h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+  
+.controls{
+    width: 100%;
+    background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0,0,0,0.02) 50%, rgba(255,255,255,0.02) 61%, rgba(0,0,0,0.02) 73%), linear-gradient(33deg, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.20) 100%);
+    background-blend-mode: normal,color-burn;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+}
+  
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+  
+.form-register a{
+    color: white;
+    text-decoration: none;
+}
+  
+.form-register a:hover{
+    color: white;
+    text-decoration: underline;
+}
+  
+.form-register .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.hh{
+    text-align: center;
+}
+
+.registrarse{
+    background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+}
+
+@media(max-width:415px) and (min-width:310px){
+    .form-register{
+        width: 300px;
+    }
+}
+
+@media(max-width:310px){
+    .form-register{
+        width: 200px;
+    }
+
+    .controls{
+        font-size: 10px;
+    }
+}
+
+@media(max-width:922px){
+    .menu .enlace{
+        display: inline-block;
+        padding: 10px 0;
+    }
+}
+
+/*Footer*/
+footer{
+    
+    width: auto;
+    background-color: black;
+    text-align: center;
+}
+
+#cover {
+    background: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.margen {
+    margin: 10px;
+}
+
+.user-img {
+    margin-top: -85px;
+    margin-bottom: 35px;
+}
+
+.user-img img {
+    width: 160px;
+    height: 160px;
+    box-shadow: 0px 0px 3px #848484;
+    border-radius: 50%;
+}
+
+.form-group input{
+    border: 2px solid dodgerblue;
+    height: 42px;
+    font-size: 18px;
+    /* border: 0px; */
+    padding-left: 54px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.form-group::before{
+    font-family: "Font Awesome\ 5 Free";
+    color:  dodgerblue;
+    position: absolute;
+    left: 32px;
+    font-size: 22px;
+    padding-top: 4px;
+} 
+
+ .form-group#user-group::before{
+    content: "\f007";
+}
+
+.form-group#pass-group::before{
+    content: "\f023";
+}
+
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #848484;
+}
+
+button{
+    width: 60%;
+    margin: 5px 0 25px;
+}
+
+.forgot{
+    padding: 10px 0;
+}
+
+.forgot a{
+    color: white;
+}
+
+@media(min-width:1028px) and (max-width:1096px){
+    .menu .enlace{
+        display: none;;
+    }
+}
