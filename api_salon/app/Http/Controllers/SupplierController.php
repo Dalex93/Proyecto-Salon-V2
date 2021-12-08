@@ -2,59 +2,58 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Proveedores\CreateSupplier;
-use App\Http\Resources\ProveedorResource;
+use App\Http\Requests\Proveedores\CrearProveedor;
+use App\Http\Requests\Proveedores\EditarProveedor;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class SupplierController extends Controller
 {
+
     public function index()
     {
-        $proveedores = ProveedorResource::collection( Supplier::all() );
-
-        return response($proveedores, Response::HTTP_OK);
+        $proveedores = Supplier::all();
+        return view('proveedors.index', compact('proveedores'));
     }
 
-    public function store(CreateSupplier $request)
+    public function create()
     {
-        $product = Supplier::create([
-            'name'    => $request->input('name'),
-            'phone'   => $request->input('phone'),
-            'address' => $request->input('address')
-        ]);
-
-        return (new ProveedorResource($product))->additional([
-            'mensaje' => 'Proveedor agregado exitosamente' 
-        ]);
+        return view('proveedors.create');
     }
 
-    public function show(Supplier $supplier)
+    public function store(CrearProveedor $request)
     {
-        $supplier = new ProveedorResource($supplier);
-        return response($supplier, Response::HTTP_OK);
+        Supplier::create([
+            'nombre'   => $request->input('nombre'),
+            'telefono' => $request->input('telefono'),
+            'direccion' => $request->input('direccion')
+        ]);
+
+        return redirect()->route('proveedors.index');
     }
 
-    public function update(Request $request, Supplier $supplier)
+    public function show(Supplier $proveedor)
     {
-        $supplier->update([
-            'name'    => $request->input('name', $supplier->name),
-            'phone'   => $request->input('phone', $supplier->phone),
-            'address' => $request->input('address', $supplier->address)
-        ]);
+        return view('proveedors.show', compact('proveedor'));
+    }
+
+    public function edit(Supplier $proveedor)
+    {
+        return view('proveedors.edit', compact('proveedor'));
+    }
+
+    public function update(EditarProveedor $request, Supplier $proveedor)
+    {
         
-        return (new ProveedorResource($supplier))->additional([
-            'mensaje' => 'El proveedor ' . $supplier->name . ' ha sido actualizado' 
-        ]);
+        $proveedor->update($request->validated());
+
+        return redirect()->route('proveedors.index');
     }
 
-    public function destroy(Supplier $supplier)
+    public function destroy(Supplier $proveedor)
     {
-        $supplier->delete(); 
+        $proveedor->delete();
 
-        return (new ProveedorResource($supplier))->additional([
-            'mensaje' => 'El proveedor ' . $supplier->name . ' ha sido eliminado' 
-        ]);
+        return redirect()->route('proveedors.index');
     }
 }

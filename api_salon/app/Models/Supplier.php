@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Supplier extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = ['id'];
 
-    public function products(){
-        return $this->hasMany(Products::class);
+    public function productos(){
+        return $this->hasMany(Producto::class);
     }
 }
